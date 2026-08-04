@@ -4,6 +4,37 @@
 <!-- Mirrored from arch-ltd.net/ar/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 21 Jul 2026 13:32:27 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+<script id="era-static-guard">
+(function () {
+  // Block accidental posts back to original WordPress host (static clone)
+  var blocked = /arch-ltd\.net/i;
+  var origFetch = window.fetch;
+  if (typeof origFetch === "function") {
+    window.fetch = function (input, init) {
+      try {
+        var url = typeof input === "string" ? input : (input && input.url) || "";
+        if (blocked.test(url)) {
+          return Promise.resolve(new Response("{}", { status: 204, statusText: "No Content" }));
+        }
+      } catch (e) {}
+      return origFetch.apply(this, arguments);
+    };
+  }
+  if (window.XMLHttpRequest) {
+    var open = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function (method, url) {
+      try {
+        if (typeof url === "string" && blocked.test(url)) {
+          this.__eraBlocked = true;
+          url = "data:application/json,{}";
+        }
+      } catch (e) {}
+      return open.apply(this, arguments);
+    };
+  }
+})();
+</script>
+
 	<meta charset="UTF-8">
 				<style>
 
@@ -178,7 +209,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel='stylesheet' id='hfe-nav-menu-widget-css' href='wp-content/plugins/elementor-pro/assets/css/widget-nav-menu.min42e3.css?ver=3.26.0' media='all' />
 <link data-minify="1" rel='stylesheet' id='elementor-gf-local-opensans-css' href='wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/opensans87a2.css?ver=1773816473' media='all' />
 <script id="jquery-core-js-extra">window.addEventListener('DOMContentLoaded', function() {
-var pysFacebookRest = {"restApiUrl":"https://arch-ltd.net/ar/wp-json/pys-facebook/v1/event","debug":""};
+var pysFacebookRest = {"restApiUrl":"","debug":""};
 //# sourceURL=jquery-core-js-extra
 });</script>
 <script src="wp-includes/js/jquery/jquery.minf43b.js?ver=3.7.1" id="jquery-core-js" data-rocket-defer defer></script>
@@ -3515,13 +3546,13 @@ var ht_ctc_variables = {"g_an_event_name":"click to chat","pixel_event_type":"tr
 <script data-minify="1" src="wp-content/cache/min/1/wp-content/plugins/click-to-chat-for-whatsapp/new/inc/assets/js/appa254.js?ver=1773815726" id="ht_ctc_app_js-js" data-rocket-defer defer></script>
 <script data-minify="1" src="wp-content/cache/min/1/wp-content/plugins/smooth-back-to-top-button/assets/js/smooth-back-to-top-buttona254.js?ver=1773815726" id="sbttb-script-js" data-rocket-defer defer></script>
 <script src="wp-content/plugins/pro-elements/assets/lib/smartmenus/jquery.smartmenus.min1576.js?ver=1.2.1" id="smartmenus-js" data-rocket-defer defer></script>
-<script src="wp-content/plugins/pro-elements/assets/lib/sticky/jquery.sticky.mind92b.js?ver=3.26.1" id="e-sticky-js" data-rocket-defer defer></script>
+<!-- e-sticky-js disabled for static/Vercel stability -->
 <script src="wp-content/plugins/jet-woo-product-gallery/assets/lib/swiper/swiper.min48f5.js?ver=5.3.6" id="swiper-js" data-rocket-defer defer></script>
 <script src="wp-content/themes/hello-elementor/assets/js/hello-frontend.mindeae.js?ver=3.2.1" id="hello-theme-frontend-js" data-rocket-defer defer></script>
 <script src="wp-includes/js/dist/hooks.minaf5f.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js"></script>
 <script src="wp-content/plugins/jet-menu/assets/public/lib/vue/vue.mina117.js?ver=2.6.11" id="jet-vue-js" data-rocket-defer defer></script>
 <script id="jet-menu-public-scripts-js-extra">
-var jetMenuPublicSettings = {"version":"2.4.7","ajaxUrl":"","isMobile":"false","getElementorTemplateApiUrl":"https://arch-ltd.net/ar/wp-json/jet-menu-api/v2/get-elementor-template-content","getBlocksTemplateApiUrl":"https://arch-ltd.net/ar/wp-json/jet-menu-api/v2/get-blocks-template-content","menuItemsApiUrl":"https://arch-ltd.net/ar/wp-json/jet-menu-api/v2/get-menu-items","restNonce":"a776bd257d","devMode":"false","wpmlLanguageCode":"","menuSettings":{"jetMenuRollUp":"true","jetMenuMouseleaveDelay":"500","jetMenuMegaWidthType":"container","jetMenuMegaWidthSelector":"","jetMenuMegaOpenSubType":"hover","jetMenuMegaAjax":""}};
+var jetMenuPublicSettings = {"version":"2.4.7","ajaxUrl":"","isMobile":"false","getElementorTemplateApiUrl":"","getBlocksTemplateApiUrl":"","menuItemsApiUrl":"","restNonce":"a776bd257d","devMode":"false","wpmlLanguageCode":"","menuSettings":{"jetMenuRollUp":"true","jetMenuMouseleaveDelay":"500","jetMenuMegaWidthType":"container","jetMenuMegaWidthSelector":"","jetMenuMegaOpenSubType":"hover","jetMenuMegaAjax":""}};
 //# sourceURL=jet-menu-public-scripts-js-extra
 </script>
 <script src="wp-content/plugins/jet-menu/assets/public/js/jet-menu-public-scripts3575.js?ver=2.4.7" id="jet-menu-public-scripts-js" data-rocket-defer defer></script>
@@ -3551,7 +3582,7 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script data-minify="1" src="wp-content/cache/min/1/wp-content/uploads/ac_assets/logo_marquee/logo-marquee87a2.js?ver=1773816473" id="uc_ac_assets_file_logo_marquee_js_4605-js" data-rocket-defer defer></script>
 <script src="wp-content/plugins/jet-engine/assets/lib/slick/slick.minc245.js?ver=1.8.1" id="jquery-slick-js" data-rocket-defer defer></script>
 <script id="jet-engine-frontend-js-extra">
-var JetEngineSettings = {"ajaxurl":"","ajaxlisting":"https://arch-ltd.net/ar/?nocache=1779247607","restNonce":"a776bd257d","hoverActionTimeout":"400","post_id":"3760","addedPostCSS":["6597"]};
+var JetEngineSettings = {"ajaxurl":"","ajaxlisting":"","restNonce":"a776bd257d","hoverActionTimeout":"400","post_id":"3760","addedPostCSS":["6597"]};
 //# sourceURL=jet-engine-frontend-js-extra
 </script>
 <script data-minify="1" src="wp-content/cache/min/1/wp-content/plugins/jet-engine/assets/js/frontend87a2.js?ver=1773816473" id="jet-engine-frontend-js" data-rocket-defer defer></script>
@@ -3562,13 +3593,13 @@ wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'rtl' ] } );
 //# sourceURL=wp-i18n-js-after
 </script>
 <script id="elementor-pro-frontend-js-before">
-var ElementorProFrontendConfig = {"ajaxurl":"","nonce":"1be5adaf25","urls":{"assets":"\/wp-content\/plugins\/pro-elements\/assets\/","rest":"https:\/\/arch-ltd.net\/ar\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":true},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"ar","app_id":""},"lottie":{"defaultAnimationUrl":"\/wp-content\/plugins\/pro-elements\/modules\/lottie\/assets\/animations\/default.json"}};
+var ElementorProFrontendConfig = {"ajaxurl":"","nonce":"1be5adaf25","urls":{"assets":"\/wp-content\/plugins\/pro-elements\/assets\/","rest":""},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":true},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"ar","app_id":""},"lottie":{"defaultAnimationUrl":"\/wp-content\/plugins\/pro-elements\/modules\/lottie\/assets\/animations\/default.json"}};
 //# sourceURL=elementor-pro-frontend-js-before
 </script>
 <script src="wp-content/plugins/pro-elements/assets/js/frontend.mind92b.js?ver=3.26.1" id="elementor-pro-frontend-js" data-rocket-defer defer></script>
 <script src="wp-content/plugins/pro-elements/assets/js/elements-handlers.mind92b.js?ver=3.26.1" id="pro-elements-handlers-js" data-rocket-defer defer></script>
 <script id="jet-elements-js-extra">
-var jetElements = {"ajaxUrl":"","isMobile":"false","templateApiUrl":"https://arch-ltd.net/ar/wp-json/jet-elements-api/v1/elementor-template","devMode":"false","messages":{"invalidMail":"Please specify a valid e-mail"}};
+var jetElements = {"ajaxUrl":"","isMobile":"false","templateApiUrl":"","devMode":"false","messages":{"invalidMail":"Please specify a valid e-mail"}};
 //# sourceURL=jet-elements-js-extra
 </script>
 <script src="wp-content/plugins/jet-elements/assets/js/jet-elements.mindade.js?ver=2.7.2.1" id="jet-elements-js" data-rocket-defer defer></script>
@@ -3606,60 +3637,43 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
     var hero = document.querySelector(".elementor-element-7e705bb");
     if (!bar) return;
 
-    /* Prevent Elementor Pro sticky from also pinning this bar (double menu / dual styles) */
+    // Disable Elementor sticky config once (no continuous mutation fighting)
     try {
-      var s = bar.getAttribute("data-settings");
-      if (s && s.indexOf("sticky") !== -1) {
-        bar.setAttribute("data-settings", '{"position":"absolute"}');
-      }
+      bar.setAttribute("data-settings", '{"position":"absolute"}');
       bar.classList.remove("elementor-sticky", "elementor-sticky--active", "elementor-sticky--effects");
-      bar.removeAttribute("data-settings-sticky");
     } catch (e) {}
 
+    var stuck = false;
     var ticking = false;
 
     function update() {
       ticking = false;
-      var threshold = 80;
       var activate = false;
       if (hero) {
-        activate = hero.getBoundingClientRect().bottom <= threshold;
+        activate = hero.getBoundingClientRect().bottom <= 80;
       } else {
-        activate = window.scrollY > 120;
+        activate = (window.scrollY || window.pageYOffset || 0) > 120;
       }
+      if (activate === stuck) return;
+      stuck = activate;
       if (activate) {
-        if (!bar.classList.contains("era-sticky-nav")) {
-          bar.classList.add("era-sticky-nav");
-          document.documentElement.classList.add("era-nav-stuck");
-        }
-        /* keep Elementor sticky classes off while ours is on */
-        bar.classList.remove("elementor-sticky", "elementor-sticky--active", "elementor-sticky--effects");
+        bar.classList.add("era-sticky-nav");
+        document.documentElement.classList.add("era-nav-stuck");
       } else {
-        if (bar.classList.contains("era-sticky-nav")) {
-          bar.classList.remove("era-sticky-nav");
-          document.documentElement.classList.remove("era-nav-stuck");
-        }
+        bar.classList.remove("era-sticky-nav");
+        document.documentElement.classList.remove("era-nav-stuck");
       }
     }
 
     function onScroll() {
-      if (!ticking) {
-        ticking = true;
-        window.requestAnimationFrame(update);
-      }
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
     update();
-
-    /* If Elementor sticky later re-applies, peel it back */
-    var obs = new MutationObserver(function () {
-      if (bar.classList.contains("era-sticky-nav")) {
-        bar.classList.remove("elementor-sticky--active", "elementor-sticky--effects");
-      }
-    });
-    obs.observe(bar, { attributes: true, attributeFilter: ["class", "style"] });
   }
 
   if (document.readyState === "loading") {
@@ -3667,12 +3681,6 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
   } else {
     initEraStickyNav();
   }
-  window.addEventListener("load", function () {
-    var bar = document.querySelector(".elementor-element-0e75d3a");
-    if (bar) {
-      bar.classList.remove("elementor-sticky", "elementor-sticky--active", "elementor-sticky--effects");
-    }
-  });
 })();
 </script>
 	</body>
