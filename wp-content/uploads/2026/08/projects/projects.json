@@ -1,0 +1,98 @@
+[
+  {
+    "name": "فيلا سكنية",
+    "folder": "فيلا سكنية",
+    "slug": "residential-villa",
+    "cover": "residential-villa/01.jpg",
+    "images": [
+      "01.jpg",
+      "02.jpg"
+    ],
+    "url": "../projects/residential-villa/index.html"
+  },
+  {
+    "name": "مبنى سكني",
+    "folder": "مبنى سكني",
+    "slug": "residential-building",
+    "cover": "residential-building/01.jpg",
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg"
+    ],
+    "url": "../projects/residential-building/index.html"
+  },
+  {
+    "name": "مبنى سكني 1",
+    "folder": "مبنى سكني 1",
+    "slug": "residential-building-1",
+    "cover": "residential-building-1/01.jpg",
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg"
+    ],
+    "url": "../projects/residential-building-1/index.html"
+  },
+  {
+    "name": "مبنى تجاري",
+    "folder": "مبنى تجاري",
+    "slug": "commercial-building",
+    "cover": "commercial-building/01.jpg",
+    "images": [
+      "01.jpg",
+      "02.jpg"
+    ],
+    "url": "../projects/commercial-building/index.html"
+  },
+  {
+    "name": "مبنى تجاري 1",
+    "folder": "مبنى تجاري 1",
+    "slug": "commercial-building-1",
+    "cover": "commercial-building-1/01.jpg",
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg"
+    ],
+    "url": "../projects/commercial-building-1/index.html"
+  },
+  {
+    "name": "مبنى تجاري 2",
+    "folder": "مبنى تجاري2",
+    "slug": "commercial-building-2",
+    "cover": "commercial-building-2/01.jpg",
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg"
+    ],
+    "url": "../projects/commercial-building-2/index.html"
+  },
+  {
+    "name": "مبنى تجاري 3",
+    "folder": "مبنى تجاري 3",
+    "slug": "commercial-building-3",
+    "cover": "commercial-building-3/01.jpg",
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg"
+    ],
+    "url": "../projects/commercial-building-3/index.html"
+  },
+  {
+    "name": "مبنى حكومي",
+    "folder": "مبنى حكومي",
+    "slug": "government-building",
+    "cover": "government-building/01.jpg",
+    "images": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg"
+    ],
+    "url": "../projects/government-building/index.html"
+  }
+]
