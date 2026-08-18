@@ -3124,7 +3124,7 @@ const defaultOptions = {
     kind: OptionKind.API
   },
   cMapUrl: {
-    value: "../web/cmaps/",
+    value: "/Profile/viewer/cmaps/",
     kind: OptionKind.API
   },
   disableAutoFetch: {
@@ -3172,7 +3172,7 @@ const defaultOptions = {
     kind: OptionKind.API
   },
   standardFontDataUrl: {
-    value: "../web/standard_fonts/",
+    value: "/Profile/viewer/standard_fonts/",
     kind: OptionKind.API
   },
   verbosity: {
@@ -3184,13 +3184,13 @@ const defaultOptions = {
     kind: OptionKind.WORKER
   },
   workerSrc: {
-    value: "../build/pdf.worker.js",
+    value: "/Profile/build/pdf.worker.js",
     kind: OptionKind.WORKER
   }
 };
 {
   defaultOptions.defaultUrl = {
-    value: "../industrial-era-profile.dat",
+    value: "/Profile/industrial-era-profile.pdf",
     kind: OptionKind.VIEWER
   };
   defaultOptions.disablePreferences = {
@@ -3202,7 +3202,7 @@ const defaultOptions = {
     kind: OptionKind.VIEWER
   };
   defaultOptions.sandboxBundleSrc = {
-    value: "../build/pdf.sandbox.js",
+    value: "/Profile/build/pdf.sandbox.js",
     kind: OptionKind.VIEWER
   };
 }

@@ -2,6 +2,10 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": true,
+  "rewrites": [
+    { "source": "/Profile/viewer/viewer", "destination": "/Profile/viewer/" },
+    { "source": "/Profile/viewer/viewer/", "destination": "/Profile/viewer/" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -15,6 +19,20 @@
       "headers": [
         { "key": "Content-Type", "value": "application/pdf" },
         { "key": "Content-Disposition", "value": "inline" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/Profile/viewer/(.*\\.css)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/css; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/Profile/viewer/(.*\\.js)",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]
     },
