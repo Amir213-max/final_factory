@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>الملف التعريفي — مصنع العصر الصناعي</title>
+	<style>
+		*, *::before, *::after { box-sizing: border-box; }
+		html, body { height: 100%; margin: 0; }
+		body {
+			font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+			background: #041436;
+			color: #fff;
+			display: flex;
+			flex-direction: column;
+			min-height: 100dvh;
+		}
+		.profile-toolbar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 12px;
+			flex-wrap: wrap;
+			padding: 14px 20px;
+			background: #041436;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+			flex-shrink: 0;
+			z-index: 2;
+		}
+		.profile-toolbar h1 {
+			margin: 0;
+			font-size: clamp(1rem, 2.5vw, 1.15rem);
+			font-weight: 600;
+			line-height: 1.4;
+		}
+		.profile-toolbar__actions {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+		.profile-btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			padding: 10px 18px;
+			border-radius: 6px;
+			font-size: 0.95rem;
+			font-weight: 500;
+			text-decoration: none;
+			border: 2px solid transparent;
+			cursor: pointer;
+			transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+			white-space: nowrap;
+		}
+		.profile-btn--download {
+			background: #2298CE;
+			color: #fff;
+			border-color: #2298CE;
+		}
+		.profile-btn--download:hover,
+		.profile-btn--download:focus {
+			background: #1a7aaa;
+			border-color: #1a7aaa;
+			color: #fff;
+		}
+		.profile-btn--ghost {
+			background: transparent;
+			color: #fff;
+			border-color: rgba(255, 255, 255, 0.45);
+		}
+		.profile-btn--ghost:hover,
+		.profile-btn--ghost:focus {
+			background: rgba(255, 255, 255, 0.08);
+			border-color: #fff;
+			color: #fff;
+		}
+		.profile-frame-wrap {
+			flex: 1 1 auto;
+			min-height: 0;
+			width: 100%;
+			background: #525659;
+			position: relative;
+		}
+		.profile-loading {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #525659;
+			color: #fff;
+			font-size: 1rem;
+			z-index: 1;
+			transition: opacity 0.3s ease;
+		}
+		.profile-loading.is-hidden {
+			opacity: 0;
+			pointer-events: none;
+		}
+		.profile-frame {
+			display: block;
+			width: 100%;
+			height: calc(100dvh - 68px);
+			border: 0;
+			background: #525659;
+		}
+	</style>
+</head>
+<body>
+	<header class="profile-toolbar">
+		<h1>الملف التعريفي — مصنع العصر الصناعي</h1>
+		<div class="profile-toolbar__actions">
+			<a class="profile-btn profile-btn--download" href="industrial-era-profile.dat" download="Industrial-Era-Profile.pdf">تحميل الملف</a>
+			<a class="profile-btn profile-btn--ghost" href="/">العودة للموقع</a>
+		</div>
+	</header>
+	<div class="profile-frame-wrap">
+		<div class="profile-loading" id="profileLoading">جاري تحميل الملف…</div>
+		<iframe
+			class="profile-frame"
+			id="pdfFrame"
+			title="معاينة الملف التعريفي"
+			src="viewer/viewer.html"
+		></iframe>
+	</div>
+	<script>
+	(function () {
+		var frame = document.getElementById("pdfFrame");
+		var loading = document.getElementById("profileLoading");
+		if (!frame || !loading) return;
+		frame.addEventListener("load", function () {
+			loading.classList.add("is-hidden");
+		});
+	})();
+	</script>
+</body>
+</html>

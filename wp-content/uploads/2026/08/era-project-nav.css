@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap");
+
+body.single-projects .elementor-location-header {
+	display: none !important;
+}
+
+body.single-projects .elementor-location-single > .elementor-element:first-child,
+body.single-projects .elementor-location-single > .e-parent:first-child {
+	display: none !important;
+}
+
+body.single-projects {
+	padding-top: 90px;
+	font-family: "Cairo", "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+.era-project-nav {
+	display: none !important;
+}
+
+.era-main-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99999;
+	background: rgba(8, 16, 32, 0.92);
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
+}
+
+.era-main-nav__inner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	height: 90px;
+	min-height: 90px;
+	padding: 0 24px;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+.era-main-nav__logo {
+	flex: 0 0 auto;
+	order: 1;
+	margin-inline-start: auto;
+}
+
+.era-main-nav__logo a {
+	display: block;
+	line-height: 0;
+}
+
+.era-main-nav__logo img {
+	display: block;
+	max-height: 52px;
+	width: auto;
+	max-width: 200px;
+	object-fit: contain;
+	filter: brightness(0) invert(1);
+}
+
+.era-main-nav__menu {
+	flex: 1 1 auto;
+	order: 2;
+	display: flex;
+	justify-content: center;
+}
+
+.era-main-nav__menu ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: clamp(8px, 1.6vw, 28px);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.era-main-nav__menu a {
+	position: relative;
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	font: 500 1rem/1.4 "Cairo", "Segoe UI", Tahoma, Arial, sans-serif;
+	transition: color 0.2s ease;
+}
+
+.era-main-nav__menu a::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: -4px;
+	width: 0;
+	height: 2px;
+	background: #2298ce;
+	transition: width 0.25s ease;
+}
+
+.era-main-nav__menu a:hover,
+.era-main-nav__menu a:focus {
+	color: #e8eef8;
+}
+
+.era-main-nav__menu a:hover::after,
+.era-main-nav__menu a:focus::after,
+.era-main-nav__menu .is-active a::after {
+	width: 100%;
+}
+
+.era-main-nav__menu .is-active a {
+	color: #e8eef8;
+}
+
+.era-main-nav__toggle {
+	display: none;
+	order: 0;
+	flex: 0 0 48px;
+	width: 48px;
+	height: 48px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	position: relative;
+}
+
+.era-main-nav__toggle span,
+.era-main-nav__toggle::before,
+.era-main-nav__toggle::after {
+	content: "";
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	height: 2px;
+	background: #fff;
+	transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.era-main-nav__toggle span {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.era-main-nav__toggle::before {
+	top: 16px;
+}
+
+.era-main-nav__toggle::after {
+	bottom: 16px;
+}
+
+.era-main-nav.is-open .era-main-nav__toggle span {
+	opacity: 0;
+}
+
+.era-main-nav.is-open .era-main-nav__toggle::before {
+	top: 23px;
+	transform: rotate(45deg);
+}
+
+.era-main-nav.is-open .era-main-nav__toggle::after {
+	bottom: 23px;
+	transform: rotate(-45deg);
+}
+
+.era-main-nav__mobile {
+	display: none;
+}
+
+@media (max-width: 1024px) {
+	body.single-projects {
+		padding-top: 64px;
+	}
+
+	.era-main-nav__inner {
+		height: 64px;
+		min-height: 64px;
+		padding: 0 14px;
+		justify-content: flex-start;
+	}
+
+	.era-main-nav__logo {
+		margin-inline-start: 0;
+	}
+
+	.era-main-nav__logo img {
+		max-height: 40px;
+		max-width: 150px;
+	}
+
+	.era-main-nav__menu {
+		display: none;
+	}
+
+	.era-main-nav__toggle {
+		display: block;
+		position: absolute;
+		left: 14px;
+		right: auto;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.era-main-nav__mobile {
+		display: block;
+		position: fixed;
+		inset: 0;
+		z-index: 99998;
+		background: rgba(8, 16, 32, 0.97);
+		padding: 88px 24px 24px;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: opacity 0.3s ease, visibility 0.3s ease;
+		overflow-y: auto;
+	}
+
+	.era-main-nav.is-open .era-main-nav__mobile {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+	}
+
+	.era-main-nav__mobile ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.era-main-nav__mobile a {
+		color: #fff;
+		text-decoration: none;
+		font: 600 1.35rem/1.4 "Cairo", "Segoe UI", Tahoma, Arial, sans-serif;
+	}
+
+	.era-main-nav__mobile a:hover,
+	.era-main-nav__mobile a:focus {
+		color: #2298ce;
+	}
+
+	body.era-nav-menu-open {
+		overflow: hidden;
+	}
+}
