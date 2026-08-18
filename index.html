@@ -1256,7 +1256,8 @@ html.menu-opened #uc_fullscreen_navigation_menu_elementor_9c335f6 .ue_menu {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
-<style id="era-wa-float-css">.ht-ctc-chat{z-index:999999!important;background:transparent!important;box-shadow:none!important;border:0!important}.ht-ctc-chat .ht_ctc_style,.ht-ctc-chat .ctc_s_3,.ht-ctc-chat .ctc_nb{background:transparent!important;box-shadow:none!important;border:0!important;padding:0!important}.era-wa-float-icon{display:block;width:56px;height:56px;object-fit:contain;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;filter:drop-shadow(0 3px 8px rgba(0,0,0,.28));transition:transform .2s ease}.ht-ctc-chat:hover .era-wa-float-icon{transform:scale(1.06)}</style></head>
+<style id="era-wa-float-css">.ht-ctc-chat{z-index:999999!important;background:transparent!important;box-shadow:none!important;border:0!important}.ht-ctc-chat .ht_ctc_style,.ht-ctc-chat .ctc_s_3,.ht-ctc-chat .ctc_nb{background:transparent!important;box-shadow:none!important;border:0!important;padding:0!important}.era-wa-float-icon{display:block;width:56px;height:56px;object-fit:contain;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;filter:drop-shadow(0 3px 8px rgba(0,0,0,.28));transition:transform .2s ease}.ht-ctc-chat:hover .era-wa-float-icon{transform:scale(1.06)}</style>
+<script src="/wp-content/uploads/2026/08/era-quote.js" defer></script></head>
 <body class="rtl home wp-singular page-template page-template-elementor_canvas page page-id-3760 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor translatepress-ar ehf-template-hello-elementor ehf-stylesheet-hello-elementor jet-mega-menu-location elementor-default elementor-template-canvas elementor-kit-17 elementor-page elementor-page-3760">
 			<div data-elementor-type="wp-page" data-elementor-id="3760" class="elementor elementor-3760" data-elementor-post-type="page">
 				<div class="elementor-element elementor-element-7e705bb e-con-full e-flex e-con e-parent e-lazyloaded e-no-lazyload" data-id="7e705bb" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-image:url('/wp-content/uploads/2026/08/hero-industrial-era.png?v=2');background-size:cover;background-position:center center;background-repeat:no-repeat;">
@@ -1771,6 +1772,10 @@ height: auto;
   transition: all .3s;
 }
 
+#uc_remote_item_navigation_elementor_ebc8ef5 .ue-item-button:nth-child(n+5){
+  display: none !important;
+}
+
 #uc_remote_item_navigation_elementor_ebc8ef5 .ue-item-button
 {
   display:flex;
@@ -1921,50 +1926,6 @@ height: auto;
   
   </div>
 <div class="ue-item-button elementor-repeater-item-de3e549" data-numitem="4">
-  <div class="ue-item-hero">
-    
-        
-    
-        
-        
-    
-  </div>
-  
-  </div>
-<div class="ue-item-button elementor-repeater-item-412840e" data-numitem="5">
-  <div class="ue-item-hero">
-    
-        
-    
-        
-        
-    
-  </div>
-  
-  </div>
-<div class="ue-item-button elementor-repeater-item-6c1d7a9" data-numitem="6">
-  <div class="ue-item-hero">
-    
-        
-    
-        
-        
-    
-  </div>
-  
-  </div>
-<div class="ue-item-button elementor-repeater-item-era-mz2" data-numitem="7">
-  <div class="ue-item-hero">
-    
-        
-    
-        
-        
-    
-  </div>
-  
-  </div>
-<div class="ue-item-button elementor-repeater-item-era-lv2" data-numitem="8">
   <div class="ue-item-hero">
     
         
@@ -3776,12 +3737,15 @@ jQuery(document).ready(function () {
          
          currentItem++;
           
+          var dotsCount = objButtons.length || 4;
+          var activeNum = ((currentItem - 1) % dotsCount) + 1;
+
           objButtons.each(function(event, button){
           		var objButton = jQuery(button);
             
             	var buttonNumItem = objButton.data("numitem");
                         
-            	if(buttonNumItem == currentItem)
+            	if(buttonNumItem == activeNum)
               		objButton.addClass("ue-item-active");
                	else
               		objButton.removeClass("ue-item-active");
